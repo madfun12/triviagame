@@ -3,15 +3,15 @@ import Question from './Question'
 
 export default function Quiz(){
 
-    useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=5&encode=url3986")
-    .then(response => response.json())
-    .then(data => setQuiz(data.results))
-    },[])
-
     const [quiz, setQuiz] = useState([])
     const [count, setCount] = useState(0)
     const [submitted, setSubmitted] = useState(false)
+
+    useEffect(() => {
+        fetch("https://opentdb.com/api.php?amount=5&encode=url3986")
+        .then(response => response.json())
+        .then(data => setQuiz(data.results))
+        },[])
 
     let submittedAnswers = []
     

@@ -42,13 +42,21 @@ export default function Question(props){
             }
         })
     }
+    console.log(answers)
+    
         
 
     return(
         <div className="question">
             <h3>{decodeURIComponent(props.question)}</h3>
             {answers.map(answer => {
-                return <button id={answer.id} style={{backgroundColor: answer.active ? "rgb(181, 147, 255)": "transparent"}}onClick={selectAnswer}>{decodeURIComponent(answer.answer)}</button>
+                const activeStyle = {
+                    backgroundColor: answer.active ? "rgb(181, 147, 255)": "transparent"
+                }
+                const submittedStyle = {
+                    backgroundColor: answer.correct === 'true' ? "rgba(0, 201, 94, 0.3)" : "rgba(255, 0, 0, 0.25)"
+                }
+                return <button id={answer.id} style={props.submitted ? submittedStyle : activeStyle}onClick={selectAnswer}>{decodeURIComponent(answer.answer)}</button>
             })}
         </div>
         )}

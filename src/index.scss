@@ -16,6 +16,28 @@ body{
     height: 600px;
     padding: 20px;
     border-radius: 20px;
+
+    .start-screen{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      h1{
+        color: rgb(64, 0, 201);
+        margin-bottom: 40px;
+      }
+      button{
+        background-color: rgb(64, 0, 201);
+        color: #fff;
+        margin-right: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+      }
+    }
+
     .quiz{
       .question{
         display: block;
@@ -27,7 +49,7 @@ body{
         button{
           padding: 3px 10px;
           border-radius: 10px;
-          margin: 0 3px;
+          margin: 2px 3px;
           color: rgb(20, 20, 20);
           border: 2px solid rgb(20, 20, 20);
 
