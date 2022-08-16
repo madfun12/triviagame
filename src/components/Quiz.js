@@ -22,7 +22,6 @@ export default function Quiz(){
                 if(index === 0){
                     submittedAnswers.shift()
                 }else{
-                    console.log(item)
                     submittedAnswers.splice(index, 1)
                 }
             }
@@ -31,7 +30,6 @@ export default function Quiz(){
 
     function submit(){
         let counter = 0
-        console.log(submittedAnswers)
         submittedAnswers.map(item => {
             if(item.correct === 'true'){
                 return counter ++
@@ -45,7 +43,6 @@ export default function Quiz(){
         <div className='quiz'>
             {quiz.map(item => {
                 let answers = [item.correct_answer, ...item.incorrect_answers]
-                console.log(answers)
                 return(
                     <Question 
                         question = {decodeURIComponent(item.question)}

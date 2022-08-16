@@ -42,7 +42,6 @@ export default function Question(props){
             }
         })
     }
-    console.log(answers)
     
         
 
