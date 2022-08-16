@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function Question(props){
-
     function shuffle(array) {
         let currentIndex = array.length,  randomIndex;
       
@@ -17,16 +16,17 @@ export default function Question(props){
         return array;
     }
 
-    let shuffledAnswers = shuffle(props.answers)
-
-    const [answers, setAnswers] = useState(shuffledAnswers.map((answer, index) => {
+    let allAnswers = props.answers.map((answer, index) => {
         return{
             answer: answer,
             correct: index === 0 ? "true" : "false",
             active: false,
             id: index
-        }
-    }))
+        }})
+
+    let shuffledAnswers = shuffle(allAnswers)
+
+    const [answers, setAnswers] = useState(shuffledAnswers)
 
     function selectAnswer(event){
         answers.map((answer,index) => {

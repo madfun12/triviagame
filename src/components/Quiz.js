@@ -45,7 +45,7 @@ export default function Quiz(){
         <div className='quiz'>
             {quiz.map(item => {
                 let answers = [item.correct_answer, ...item.incorrect_answers]
-                
+                console.log(answers)
                 return(
                     <Question 
                         question = {decodeURIComponent(item.question)}

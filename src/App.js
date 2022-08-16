@@ -10,8 +10,8 @@ function App() {
   return (
     <main>
       {!started && <div className="start-screen">
-        <h1>Trivia Game</h1>
-        <button onClick={toggle}>Start Quiz</button>
+          <h1>Trivia Game</h1>
+          <button onClick={toggle}>Start Quiz</button>
         </div>}
       {started && <Quiz />}
     </main>
